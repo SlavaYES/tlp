@@ -1,0 +1,10 @@
+﻿@page "/"
+@inject NavigationManager UriHelper
+
+@code
+{
+    protected override async Task OnInitializedAsync()
+    {
+        UriHelper.NavigateTo(UriHelper.BaseUri + "lab1", true);
+    }
+}

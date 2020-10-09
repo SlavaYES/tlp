@@ -1,0 +1,154 @@
+﻿@using lab_1_Interface.Models
+
+<h3>Выполнение</h3>
+
+@* G = ({a, b, c}, {A, B, C}, P, A) *@
+@* Необходимо разработать ввод данных
+    Терминальный алфавит
+    Нетерминальный алфавит
+    Правила
+    Начальный нетерминальный символ*@
+
+<style>
+    .name_r {
+        width: 3px;
+        text-align: center;
+    }
+    .reg {
+        width: 100px;
+        text-align: center;
+    }
+</style>
+
+<div>
+    <label class="pr-2" style="width: 110px">Терминалы</label>
+    <input type="text" id="input_vt" placeholder="Введите символы через запятую" style="width: 270px" @bind-value=@input_vt_text />
+    <button @onclick="@inputVT" class="btn btn-primary">Записать</button>
+</div>
+<br>
+<div>
+    <label class="pr-2" style="width: 110px">Нетерминалы</label>
+    <input type="text" id="input_vn" placeholder="Введите символы через запятую" style="width: 270px" @bind-value=@input_vn_text />
+    <button @onclick="@inputVN" class="btn btn-primary">Записать</button>
+</div>
+
+
+
+@if (split_vt_text?.Length > 0) {
+    <label>Терминальный список</label>
+    <lu>
+        @foreach (string list in split_vt_text) {
+            <li>
+                @list
+            </li>
+        }
+    </lu>
+}
+
+@if (split_vn_text?.Length > 0) {
+    <label>Нетерминальный список</label>
+    <lu>
+        @foreach (string list in split_vn_text) {
+            <li>
+                @list
+            </li>
+        }
+    </lu>
+    
+    <div>
+        <label class="pr-2">Начальный нетерминал</label>
+        <form>
+            <input list="nt" @bind-value=@grammatic.S>
+            <datalist id="nt">
+                @foreach (string list in grammatic.VN) {
+                    <option>
+                        @list
+                    </option>
+                }
+            </datalist>
+        </form>
+    </div>
+
+    <div>
+        <label class="pr-2" style="width: 110px">Начальный [</label>
+        <label class="pr-2">@grammatic.S </label>
+        <label class="pr-2"> ] </label>
+    </div>
+
+    <div>
+        <label class="pr-2" style="width: 110px">Правила</label>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>
+                            Нетерминал
+                        </td>
+                        <td></td>
+                        <td>
+                           Правило
+                        </td>
+                        <td></td>
+                    </tr>
+                </thead>
+                
+                <tr>
+                    <td class="name_r">
+                        @grammatic.S
+                    </td>
+                    <td class="name_r">
+                        ->
+                    </td>
+                    <td class="reg">
+                        <input type="text" id="input_vt" placeholder="Введите правило" />
+                    </td>
+                    <td class="reg">
+                        <button class="btn btn-primary" >Записать</button>
+                    </td>
+                </tr>
+
+                @* 
+                    Здесь буду дальше вводить правила    
+                *@
+                
+            </table>
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Записать</button>
+}
+
+
+@code {
+    Grammatic grammatic = new Grammatic();
+    string input_vt_text, input_vn_text;
+    string[] split_vt_text, split_vn_text;
+    int num_regulars = 0;
+
+    void inputVT()
+    {
+        if (input_vt_text?.Length > 0) {
+            split_vt_text = input_vt_text.Split(",");
+            grammatic.VT?.Clear();
+            grammatic.VT = new List<string>();
+            foreach (string list in split_vt_text) {
+                grammatic.VT.Add(list);
+            }
+        }
+    }
+
+    void inputVN()
+    {
+        if (input_vn_text?.Length > 0) {
+            split_vn_text = input_vn_text.Split(",");
+            grammatic.VN?.Clear();
+            grammatic.VN = new List<string>();
+            foreach (string list in split_vn_text) {
+                grammatic.VN.Add(list);
+            }
+        }
+    }
+
+
+
+}
