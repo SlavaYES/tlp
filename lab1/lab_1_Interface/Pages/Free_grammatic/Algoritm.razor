@@ -10,10 +10,11 @@
     Начальный нетерминальный символ*@
 
 <style>
-    .name_r {
-        width: 3px;
+    .name_r, .input_vn_r {
+        width: 40px;
         text-align: center;
     }
+
     .reg {
         width: 100px;
         text-align: center;
@@ -54,7 +55,7 @@
             </li>
         }
     </lu>
-    
+
     <div>
         <label class="pr-2">Начальный нетерминал</label>
         <form>
@@ -75,47 +76,73 @@
         <label class="pr-2"> ] </label>
     </div>
 
-    <div>
-        <label class="pr-2" style="width: 110px">Правила</label>
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <td>
-                            Нетерминал
-                        </td>
-                        <td></td>
-                        <td>
-                           Правило
-                        </td>
-                        <td></td>
-                    </tr>
-                </thead>
-                
-                <tr>
-                    <td class="name_r">
-                        @grammatic.S
-                    </td>
-                    <td class="name_r">
-                        ->
-                    </td>
-                    <td class="reg">
-                        <input type="text" id="input_vt" placeholder="Введите правило" />
-                    </td>
-                    <td class="reg">
-                        <button class="btn btn-primary" >Записать</button>
-                    </td>
-                </tr>
 
-                @* 
-                    Здесь буду дальше вводить правила    
-                *@
-                
-            </table>
-        </div>
+    <div>
+        <label class="pr-2" style="width: 110px">Количество правил</label>
+        <input type="text" id="input_num_r" placeholder="Введите число" style="width: 270px" @bind-value=@input_num_r />
     </div>
 
-    <button class="btn btn-primary">Записать</button>
+    if (input_num_r > 0) {
+        <div>
+            <label class="pr-2" style="width: 110px">Правила</label>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>
+                                Нетерминал
+                            </td>
+                            <td></td>
+                            <td>
+                                Правило
+                            </td>
+                            <td></td>
+                        </tr>
+                    </thead>
+
+                    <tr>
+                        <td class="name_r">
+                            @grammatic.S
+                        </td>
+                        <td class="name_r">
+                            ->
+                        </td>
+                        <td class="reg">
+                            <input type="text" id="input_vt" placeholder="Введите правило" />
+                        </td>
+                    </tr>
+
+
+                    @for (int i = 1; i < input_num_r; i++) {
+                        <tr>
+                            <td class="name_r">
+                                <div>
+                                    <form>
+                                        <input list="vn_r" class="input_vn_r">
+                                        <datalist id="vn_r">
+                                            @foreach (string list in grammatic.VN) {
+                                                <option>
+                                                    @list
+                                                </option>
+                                            }
+                                        </datalist>
+                                    </form>
+                                </div>
+                            </td>
+                            <td class="name_r">
+                                ->
+                            </td>
+                            <td>
+                                <input type="text" id="input_vt" placeholder="Введите правило" />
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    }
+
 }
 
 
@@ -124,6 +151,12 @@
     string input_vt_text, input_vn_text;
     string[] split_vt_text, split_vn_text;
     int num_regulars = 0;
+    int input_num_r = 0;
+
+    void inputNumR()
+    {
+
+    }
 
     void inputVT()
     {
