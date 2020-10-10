@@ -23,44 +23,61 @@
 
 <div>
     <label class="pr-2" style="width: 110px">Терминалы</label>
-    <input type="text" id="input_vt" placeholder="Введите символы через запятую" style="width: 270px" @bind-value=@input_vt_text />
-    <button @onclick="@inputVT" class="btn btn-primary">Записать</button>
+    <input type="text" id="input_vt" placeholder="Введите символы через запятую" style="width: 270px" @bind=input_vt_text />
+    <button @onclick="inputVT" class="btn btn-primary">Записать</button>
 </div>
 <br>
 <div>
     <label class="pr-2" style="width: 110px">Нетерминалы</label>
-    <input type="text" id="input_vn" placeholder="Введите символы через запятую" style="width: 270px" @bind-value=@input_vn_text />
-    <button @onclick="@inputVN" class="btn btn-primary">Записать</button>
+    <input type="text" id="input_vn" placeholder="Введите символы через запятую" style="width: 270px" @bind=input_vn_text />
+    <button @onclick="inputVN" class="btn btn-primary">Записать</button>
 </div>
 
+<label>Терминальный список</label>
+<ul>
+    @foreach (string list in grammatic.VT) {
+        <li>
+            @list
+        </li>
+    }
+</ul>
 
+<label>Нетерминальный список</label>
+<ul>
+    @foreach (string list in grammatic.VN) {
+        <li>
+            @list
+        </li>
+    }
+</ul>
 
-@if (split_vt_text?.Length > 0) {
-    <label>Терминальный список</label>
-    <lu>
-        @foreach (string list in split_vt_text) {
-            <li>
-                @list
-            </li>
-        }
-    </lu>
-}
+@*<div>
+    <label class="pr-2" style="float: left;">Начальный нетерминал</label>
+    <form style="margin-left: 10px; float: left; ">
+        <input list="nt" @bind-value=newRegularLeft style="width: 185px;" placeholder="Выберите элемент">
+        <datalist id="nt">
+            @foreach (string list in grammatic.VN) {
+                <option>
+                    @list
+                </option>
+            }
+        </datalist>
+    </form>
+    <span class="pr-2" style="margin-left: 10px;"> [ </span>
+    <label class="pr-2">@grammatic.Regulation[0].left </label>
+    <span class="pr-2"> ] </span>
+    <button class="btn btn-primary" @onclick="onClickNewLeft">Записать</button>
+</div>
+<br>*@
 
-@if (split_vn_text?.Length > 0) {
-    <label>Нетерминальный список</label>
-    <lu>
-        @foreach (string list in split_vn_text) {
-            <li>
-                @list
-            </li>
-        }
-    </lu>
+<h3>Всего правил: (@grammatic.Regulation.Count)</h3>
 
-    <div>
-        <label class="pr-2">Начальный нетерминал</label>
+<ul>
+    @foreach (var regular in grammatic.Regulation) {
+    <li>
         <form>
-            <input list="nt" @bind-value=@grammatic.S>
-            <datalist id="nt">
+            <input list="swap" @bind-value="regular.left" style="width: 50px;" placeholder="Выберите элемент">
+            <datalist id="swap">
                 @foreach (string list in grammatic.VN) {
                     <option>
                         @list
@@ -68,101 +85,52 @@
                 }
             </datalist>
         </form>
-    </div>
-
-    <div>
-        <label class="pr-2" style="width: 110px">Начальный [</label>
-        <label class="pr-2">@grammatic.S </label>
-        <label class="pr-2"> ] </label>
-    </div>
-
-
-    <div>
-        <label class="pr-2" style="width: 110px">Количество правил</label>
-        <input type="text" id="input_num_r" placeholder="Введите число" style="width: 270px" @bind-value=@input_num_r />
-    </div>
-
-    if (input_num_r > 0) {
-        <div>
-            <label class="pr-2" style="width: 110px">Правила</label>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>
-                                Нетерминал
-                            </td>
-                            <td></td>
-                            <td>
-                                Правило
-                            </td>
-                            <td></td>
-                        </tr>
-                    </thead>
-
-                    <tr>
-                        <td class="name_r">
-                            @grammatic.S
-                        </td>
-                        <td class="name_r">
-                            ->
-                        </td>
-                        <td class="reg">
-                            <input type="text" id="input_vt" placeholder="Введите правило" />
-                        </td>
-                    </tr>
-
-
-                    @for (int i = 1; i < input_num_r; i++) {
-                        <tr>
-                            <td class="name_r">
-                                <div>
-                                    <form>
-                                        <input list="vn_r" class="input_vn_r">
-                                        <datalist id="vn_r">
-                                            @foreach (string list in grammatic.VN) {
-                                                <option>
-                                                    @list
-                                                </option>
-                                            }
-                                        </datalist>
-                                    </form>
-                                </div>
-                            </td>
-                            <td class="name_r">
-                                ->
-                            </td>
-                            <td>
-                                <input type="text" id="input_vt" placeholder="Введите правило" />
-                            </td>
-                        </tr>
-                    }
-
-                </table>
-            </div>
-        </div>
+    </li>
     }
+</ul>
 
-}
+<form>
+    <input list="regular" @bind-value=newRegularLeft style="width: 185px;" placeholder="Выберите элемент">
+    <datalist id="regular">
+        @foreach (string list in grammatic.VN) {
+            <option>
+                @list
+            </option>
+        }
+    </datalist>
+</form>
+
+<button class="btn btn-primary" @onclick="onClickNewLeft">Записать</button>
 
 
 @code {
     Grammatic grammatic = new Grammatic();
+
     string input_vt_text, input_vn_text;
     string[] split_vt_text, split_vn_text;
-    int num_regulars = 0;
-    int input_num_r = 0;
 
-    void inputNumR()
+    string newRegularLeft;
+
+    protected override void OnInitialized()
     {
+        grammatic.VT = new List<string>();
+        grammatic.VN = new List<string>();
+        grammatic.Regulation = new List<Regular>();
 
+    }
+
+    void onClickNewLeft()
+    {
+        if (!string.IsNullOrWhiteSpace(newRegularLeft)) {
+            grammatic.Regulation.Add(new Regular() { left = newRegularLeft });
+            newRegularLeft = string.Empty;
+        }
     }
 
     void inputVT()
     {
-        if (input_vt_text?.Length > 0) {
+        if (!string.IsNullOrWhiteSpace(input_vt_text)) {
             split_vt_text = input_vt_text.Split(",");
-            grammatic.VT?.Clear();
             grammatic.VT = new List<string>();
             foreach (string list in split_vt_text) {
                 grammatic.VT.Add(list);
@@ -172,9 +140,8 @@
 
     void inputVN()
     {
-        if (input_vn_text?.Length > 0) {
+        if (!string.IsNullOrWhiteSpace(input_vn_text)) {
             split_vn_text = input_vn_text.Split(",");
-            grammatic.VN?.Clear();
             grammatic.VN = new List<string>();
             foreach (string list in split_vn_text) {
                 grammatic.VN.Add(list);
