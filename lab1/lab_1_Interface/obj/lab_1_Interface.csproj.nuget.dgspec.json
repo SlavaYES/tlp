@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\voen1\\Desktop\\-\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj": {}
+    "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj": {}
   },
   "projects": {
-    "C:\\Users\\voen1\\Desktop\\-\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj": {
+    "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\voen1\\Desktop\\-\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj",
+        "projectUniqueName": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj",
         "projectName": "lab_1_Interface",
-        "projectPath": "C:\\Users\\voen1\\Desktop\\-\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj",
+        "projectPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj",
         "packagesPath": "C:\\Users\\voen1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\voen1\\Desktop\\-\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\obj\\",
+        "outputPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

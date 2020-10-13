@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\voen1\\Desktop\\-\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj": {}
+    "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\voen1\\Desktop\\-\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj": {
+    "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\voen1\\Desktop\\-\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj",
+        "projectUniqueName": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj",
         "projectName": "lab1",
-        "projectPath": "C:\\Users\\voen1\\Desktop\\-\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj",
+        "projectPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj",
         "packagesPath": "C:\\Users\\voen1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\voen1\\Desktop\\-\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\obj\\",
+        "outputPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

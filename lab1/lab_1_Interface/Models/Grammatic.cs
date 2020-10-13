@@ -10,11 +10,9 @@ namespace lab_1_Interface.Models
         public List<string> VT { get; set; }
         public List<string> VN { get; set; }
         public string S { get; set; }
-
         public int Min { get; set; }
         public int Max { get; set; }
         public List<Regular> Regulation { get; set; }
-
-        public const string lamb = "lamb";
+        public string lamb { get; set; }
     }
 }
