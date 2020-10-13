@@ -53,24 +53,25 @@
     }
 </ul>
 
+<div>
+    <label class="pr-2">Количество символов:</label>
+    <label class="" style="width: 50px">От:</label>
+    <input type="text" @bind="@mGrammatic.Min" />
+    <label class="" style="width: 50px">До:</label>
+    <input type="text" @bind="@mGrammatic.Max" />
+</div>
+
 <br>
-<h4>Всего правил: (@mGrammatic.Regulation.Count)</h4>
+<h4>Всего правил: (@mGrammatic.Regulation?.Count)</h4>
+<label>(Зарезервированные символы: @mGrammatic.lamb - лямбда)</label>
 
 <ul>
     @foreach (var regular in mGrammatic.Regulation)
     {
-        <li>
-            <form style="float: left; ">
-                <input list="swap" @bind-value="regular.left" style="width: 50px;" placeholder="Выберите элемент">
-                <datalist id="swap">
-                    @foreach (string list in mGrammatic.VN)
-                    {
-                        <option>
-                            @list
-                        </option>
-                    }
-                </datalist>
-            </form>
+        <div class="row">
+            <div>
+                @regular.left
+            </div>
 
             <span style="margin-left: 10px; ">
                 <span> -> </span>
@@ -83,7 +84,7 @@
                     <span> | </span>
                 }
             </span>
-        </li>
+        </div>
     }
 </ul>
 
@@ -104,5 +105,20 @@
 </div>
 
 <div>
+    <label class="pr-2">Начальный символ:</label>
+    <input type="text" @bind="@mGrammatic.S" />
+</div>
+
+<div>
     <span>@mDebug</span>
 </div>
+
+<button @onclick="CompRec" class="btn btn-primary">Вычислить</button>
+
+@if (Answer != null)
+{
+    @foreach (var m in Answer)
+    {
+        <div>@m</div>
+    }
+}

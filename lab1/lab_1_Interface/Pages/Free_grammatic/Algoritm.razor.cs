@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using lab_1_Interface.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace lab_1_Interface.Pages.Free_grammatic
 {
@@ -10,9 +12,10 @@ namespace lab_1_Interface.Pages.Free_grammatic
         string mInputVtText, mInputVnText;
         string[] mSplitVtText, mSplitVnText;
 
-        string mNewRegularLeft, mNewRegularRight;
+        private string mNewRegularLeft, mNewRegularRight;
 
         static string mDebug;
+        protected List<string> Answer { get; set; }
 
         protected override void OnInitialized()
         {
@@ -25,8 +28,17 @@ namespace lab_1_Interface.Pages.Free_grammatic
         protected void onClickNewRegular()
         {
             if (!string.IsNullOrWhiteSpace(mNewRegularLeft) && !(string.IsNullOrWhiteSpace(mNewRegularRight)))
-            {
-                mGrammatic.Regulation = ConvertStringToRegular(mNewRegularLeft + "->" + mNewRegularRight + "\r\n", mGrammatic);
+            { 
+                var reg = ConvertStringToRegular(mNewRegularLeft + "->" + mNewRegularRight + "\r\n", mGrammatic);
+                if (reg == null)
+                {
+                    return;
+                }
+
+                foreach (var r in reg)
+                {
+                    mGrammatic.Regulation.Add(r);
+                }
             }
         }
 
@@ -177,6 +189,15 @@ namespace lab_1_Interface.Pages.Free_grammatic
                     mGrammatic.VN.Add(list);
                 }
             }
+        }
+
+        protected void CompRec()
+        {
+            Answer = CompRec(mGrammatic.S, 0);
+        }
+        List<string> CompRec(string S, int stringCount)
+        {
+            return null;
         }
     }
 }
