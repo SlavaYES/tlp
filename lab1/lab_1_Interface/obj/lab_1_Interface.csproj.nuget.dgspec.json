@@ -1,29 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj": {}
+    "D:\\study\\ТЯП\\tlp\\lab1\\lab_1_Interface\\lab_1_Interface.csproj": {}
   },
   "projects": {
-    "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj": {
+    "D:\\study\\ТЯП\\tlp\\lab1\\lab1\\lab1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj",
+        "projectUniqueName": "D:\\study\\ТЯП\\tlp\\lab1\\lab1\\lab1.csproj",
         "projectName": "lab1",
-        "projectPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj",
-        "packagesPath": "C:\\Users\\voen1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\obj\\",
+        "projectPath": "D:\\study\\ТЯП\\tlp\\lab1\\lab1\\lab1.csproj",
+        "packagesPath": "C:\\Users\\plyas\\.nuget\\packages\\",
+        "outputPath": "D:\\study\\ТЯП\\tlp\\lab1\\lab1\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\voen1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\plyas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -55,38 +56,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj": {
+    "D:\\study\\ТЯП\\tlp\\lab1\\lab_1_Interface\\lab_1_Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj",
+        "projectUniqueName": "D:\\study\\ТЯП\\tlp\\lab1\\lab_1_Interface\\lab_1_Interface.csproj",
         "projectName": "lab_1_Interface",
-        "projectPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj",
-        "packagesPath": "C:\\Users\\voen1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\obj\\",
+        "projectPath": "D:\\study\\ТЯП\\tlp\\lab1\\lab_1_Interface\\lab_1_Interface.csproj",
+        "packagesPath": "C:\\Users\\plyas\\.nuget\\packages\\",
+        "outputPath": "D:\\study\\ТЯП\\tlp\\lab1\\lab_1_Interface\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\voen1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\plyas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj": {
-                "projectPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj"
+              "D:\\study\\ТЯП\\tlp\\lab1\\lab1\\lab1.csproj": {
+                "projectPath": "D:\\study\\ТЯП\\tlp\\lab1\\lab1\\lab1.csproj"
               }
             }
           }
@@ -139,7 +141,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
