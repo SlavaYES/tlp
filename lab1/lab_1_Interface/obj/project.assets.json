@@ -15,6 +15,25 @@
           "lib/netstandard2.1/Blazored.LocalStorage.dll": {}
         }
       },
+      "BlazorInputFile/0.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.1.0-preview3.19555.2",
+          "Microsoft.AspNetCore.Components.Web": "3.1.0-preview3.19555.2"
+        },
+        "compile": {
+          "lib/netstandard2.1/BlazorInputFile.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/BlazorInputFile.dll": {}
+        },
+        "build": {
+          "buildTransitive/BlazorInputFile.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/BlazorInputFile.props": {}
+        }
+      },
       "MatBlazor/2.7.0": {
         "type": "package",
         "dependencies": {
@@ -186,6 +205,24 @@
         "blazored.localstorage.nuspec",
         "icon.png",
         "lib/netstandard2.1/Blazored.LocalStorage.dll"
+      ]
+    },
+    "BlazorInputFile/0.2.0": {
+      "sha512": "wsPTwoA9fkHOxjEh0W0brNeTaVBaMCFwfBLehbRhfW+RzlIrYtlJ5qFpT5f377Ej6ELk+xeoUrkDBx9c8JF7DQ==",
+      "type": "package",
+      "path": "blazorinputfile/0.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazorinputfile.0.2.0.nupkg.sha512",
+        "blazorinputfile.nuspec",
+        "build/BlazorInputFile.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/BlazorInputFile.props",
+        "buildTransitive/BlazorInputFile.props",
+        "lib/netstandard2.0/BlazorInputFile.dll",
+        "lib/netstandard2.1/BlazorInputFile.dll",
+        "staticwebassets/inputfile.js"
       ]
     },
     "MatBlazor/2.7.0": {
@@ -409,34 +446,35 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "BlazorInputFile >= 0.2.0",
       "Blazored.LocalStorage >= 3.0.0",
       "MatBlazor >= 2.7.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\voen1\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\plyas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj",
+      "projectUniqueName": "D:\\study\\ТЯП\\tlp\\lab1\\lab_1_Interface\\lab_1_Interface.csproj",
       "projectName": "lab_1_Interface",
-      "projectPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj",
-      "packagesPath": "C:\\Users\\voen1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\obj\\",
+      "projectPath": "D:\\study\\ТЯП\\tlp\\lab1\\lab_1_Interface\\lab_1_Interface.csproj",
+      "packagesPath": "C:\\Users\\plyas\\.nuget\\packages\\",
+      "outputPath": "D:\\study\\ТЯП\\tlp\\lab1\\lab_1_Interface\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\voen1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\plyas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
+        "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -454,6 +492,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "BlazorInputFile": {
+            "target": "Package",
+            "version": "[0.2.0, )"
+          },
           "Blazored.LocalStorage": {
             "target": "Package",
             "version": "[3.0.0, )"
@@ -481,7 +523,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
