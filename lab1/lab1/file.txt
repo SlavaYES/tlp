@@ -1,7 +1,7 @@
 a,b,c,k
 A,B,C
 A
-1,10
-A -> aB|lamb|cC|lamb
-B -> aC|bC
-C -> k|c|lamb
+1,5
+A -> aB | C
+B -> cC | A
+C -> b | lamb

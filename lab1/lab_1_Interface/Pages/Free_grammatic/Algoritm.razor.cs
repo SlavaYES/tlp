@@ -9,6 +9,8 @@ using lab_1_Interface.Models;
 using MatBlazor;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.TeamFoundation.Common.Internal;
+using Microsoft.VisualBasic;
+using Microsoft.VisualStudio.Services.Common;
 
 namespace lab_1_Interface.Pages.Free_grammatic
 {
@@ -201,15 +203,64 @@ namespace lab_1_Interface.Pages.Free_grammatic
         }
         protected void CompRec()
         {
-            Answer = CompRec(mGrammatic.Regulation[0].left, 0);
+            Answer = CompRecSlava(mGrammatic.Regulation[0], 0);
         }
-        List<string> CompRec(string S, int stringCount)
+        List<string> CompRecSlava(Regular s, int stringCount)
         {
+            if (stringCount >= mGrammatic.Max) {
+                return null;
+            }
             List<string> list = new List<string>();
 
-            Dictionary<string, List<string>> keyValues = new Dictionary<string, List<string>>();
+            foreach (var element in s.right) {
+                Regular nTerm = new Regular();
+                string  term = "";
+                bool end = false;
+                foreach (var symbol in element) {
 
+                    if (mGrammatic.VT.FindIndex(x => x == symbol) > -1) {
+                        term = symbol;
+                    } else if (mGrammatic.Regulation.FindIndex(x => x.left == symbol) > -1) {
+                        nTerm = mGrammatic.Regulation[mGrammatic.Regulation.FindIndex(x => x.left == symbol)];                          
+                    } else if (mGrammatic.lamb.Equals(symbol)) {
+                        end = true;
+                    }
+                }
+
+                if (end) {
+                    list.Add("");
+                    //stringCount -= 1;
+                } else if (nTerm.left != null) {
+                    var subList = CompRecSlava(nTerm, stringCount + term.Length);
+                    if (subList == null) {
+                        break;
+                    }
+                    for (int i = 0;  i < subList.Count(); i++) {
+                        subList[i] = term + subList[i];
+                    }
+                    list.AddRange(subList);
+                } else {
+                    string endChain = term;
+                    list.Add(endChain);   
+                }
+            }
             return list;
+        }
+
+        public void deleteLamb(Regular regular)
+        {
+            bool flagDelete = false;
+            foreach (var element in regular.right) {
+                foreach (var symbol in element) {
+                    if (mGrammatic.lamb.Equals(symbol)) {
+                        flagDelete = true;
+                    }
+                }
+                if (flagDelete) {
+                    regular.right.Remove(element);
+                    flagDelete = false;
+                }
+            }
         }
 
         List<string> SubCompRec()
