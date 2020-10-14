@@ -50,6 +50,7 @@ namespace lab_1_Interface.Pages.Free_grammatic
             if (!string.IsNullOrWhiteSpace(mNewRegularLeft) && !(string.IsNullOrWhiteSpace(mNewRegularRight)))
             {
                 string str = mNewRegularLeft + "->" + mNewRegularRight + "\r\n";
+                var reg = ConvertStringToRegular(str);
                 if (reg == null)
                 {
                     return;
