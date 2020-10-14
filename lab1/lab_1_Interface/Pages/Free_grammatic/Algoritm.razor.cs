@@ -9,6 +9,8 @@ using lab_1_Interface.Models;
 using MatBlazor;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.TeamFoundation.Common.Internal;
+using Microsoft.VisualBasic;
+using Microsoft.VisualStudio.Services.Common;
 
 namespace lab_1_Interface.Pages.Free_grammatic
 {
@@ -204,154 +206,19 @@ namespace lab_1_Interface.Pages.Free_grammatic
                 }
             }
         }
-        protected void CompRecSasha()
+        protected void CompRec()
         {
-            //Answer = CompRec(mGrammatic.Regulation[0].left, 0);
-            var index = mGrammatic.Regulation.FindIndex(x => x.left == mGrammatic.S);
-            var tmp = mGrammatic.Regulation[index];
-            mGrammatic.Regulation.Remove(tmp);
-            mGrammatic.Regulation.Insert(0, tmp);
+            Answer = CompRec(mGrammatic.Regulation[0].left, 0);
+        }
+        List<string> CompRec(string S, int stringCount)
+        {
+            List<string> list = new List<string>();
 
-            bool isOne = true;
-            List<Chain> list = new List<Chain>();
-            do
-            {
-                foreach (var regulars in mGrammatic.Regulation)
-                {
-                    if (isOne)
-                    {
-                        foreach (var reg in regulars.right)
-                        {
-                            list.Add(new Chain());
-                            foreach (var r in reg)
-                            {
-                                if (mGrammatic.VN.FindIndex(x => IsRavnStr(x, r)) >= 0)
-                                {
-                                    list.LastOrDefault().End = r;
-                                }
-                                else if (IsRavnStr(mGrammatic.lamb, r))
-                                {
-                                    list.LastOrDefault().End = mGrammatic.lamb;
-                                }
-                                else
-                                {
-                                    list.LastOrDefault().Str =
-                                        list.LastOrDefault().Str.Replace("\n", "").Replace("\t", "").Replace("r", "") +
-                                        r;
-                                    list.LastOrDefault().End = mGrammatic.lamb;
-                                }
-                            }
-                        }
+            Dictionary<string, List<string>> keyValues = new Dictionary<string, List<string>>();
 
-                        isOne = false;
-                        continue;
-                    }
-                    //
-                    for (var i = 0; i < list.Count; i++)
-                    {
-                        var listik = list[i];
-                        if (!IsRavnStr(listik.End, regulars.left))
-                        {
-                            continue;
-                        }
-
-                        var isOne2 = true;
-                        Chain listTmpOne = new Chain();
-                        foreach (var reg in regulars.right)
-                        {
-                            Chain listTmp;
-                            if (isOne2)
-                            {
-                                listTmp = list[i];
-                                listTmpOne = (Chain)list[i].Clone();
-                            }
-                            else
-                            {
-                                list.Insert(i, new Chain());
-                                listTmp = list[i];
-                                listTmp.Str = listTmpOne.Str.ToString();
-                                listTmp.End = listTmpOne.End.ToString();
-                                i++;
-                            }
-                            foreach (var r in reg)
-                            {
-                                if (mGrammatic.VN.FindIndex(x => IsRavnStr(x, r)) >= 0)
-                                {
-                                    listTmp.End = r;
-                                }
-                                else if (IsRavnStr(mGrammatic.lamb, r))
-                                {
-                                    listTmp.End = mGrammatic.lamb;
-                                }
-                                else
-                                {
-                                    listTmp.Str = listTmp.Str.Replace("\n", "").Replace("\t", "").Replace("r", "") + r;
-                                    listTmp.End = mGrammatic.lamb;
-                                }
-                            }
-
-                            isOne2 = false;
-                        }
-                    }
-
-                }
-
-                for (var i = 0; i < list.Count; i++)
-                {
-                    var model = list[i];
-                    if (model.Count < mGrammatic.Min && model.End == mGrammatic.lamb)
-                    {
-                        list.Remove(model);
-                        i--;
-                        continue;
-                    }
-
-                    if (model.Count > mGrammatic.Max)
-                    {
-                        list.Remove(model);
-                        i--;
-                    }
-                }
-            } while (Check(list));//пока есть не законченные цепочки
-
-            listAnswer = list.Distinct().ToList();
+            return list;
         }
 
-        private bool Check(List<Chain> list)//пока есть не законченные цепочки
-        {
-            if (list == null || list?.Count == 0)
-            {
-                return false;
-            }
-
-            foreach (var model in list)
-            {
-                if (!IsRavnStr(model.End, mGrammatic.lamb))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-        //List<string> CompRec(string S, int stringCount)
-        //{
-        //    List<string> list = new List<string>();
-
-        //    Dictionary<string, List<string>> keyValues = new Dictionary<string, List<string>>();
-
-        //    return list;
-        //}
-        private bool IsRavnStr(string str1, string str2)
-        {
-            if (str1.Replace("\n", "").Replace("\t", "").Replace("r", "") ==
-                str2.Replace("\n", "").Replace("\t", "").Replace("r", ""))
-            {
-                return true;
-            }
-
-            return false;
-        }
         List<string> SubCompRec()
         {
             List<string> list = new List<string>();
