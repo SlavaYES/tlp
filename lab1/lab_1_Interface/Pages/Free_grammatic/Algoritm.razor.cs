@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using lab_1_Interface.Models;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
@@ -29,7 +31,7 @@ namespace lab_1_Interface.Pages.Free_grammatic
         {
             if (!string.IsNullOrWhiteSpace(mNewRegularLeft) && !(string.IsNullOrWhiteSpace(mNewRegularRight)))
             { 
-                var reg = ConvertStringToRegular(mNewRegularLeft + "->" + mNewRegularRight + "\r\n", mGrammatic);
+                var reg = ConvertStringToRegular(mNewRegularLeft + "->" + mNewRegularRight + "\r\n");
                 if (reg == null)
                 {
                     return;
@@ -43,7 +45,7 @@ namespace lab_1_Interface.Pages.Free_grammatic
         }
 
 
-        protected static List<Regular> ConvertStringToRegular(string str, Grammatic grammatic)
+        protected List<Regular> ConvertStringToRegular(string str)
         {
             List<Regular> list = new List<Regular>();
             while (str.Length > 1)
@@ -54,92 +56,95 @@ namespace lab_1_Interface.Pages.Free_grammatic
                 regular.left = str.Substring(0, index);
 
                 str = str.Substring(index + 2);
-                mDebug = ""; // DEBUG
-
-                foreach (char iterator in str)
-                {
-                    mDebug += (int)iterator;
-                }
-
                 index = str.IndexOf("\n");
+                
+                //if (index < 0)
+                //{
+                //    var tmp1 = ConvertStringToStringList(str.Substring(0), "|");
+                //    foreach (var tmp in tmp1)
+                //    {
+                //        regular.right.Add(ConvertStringToStringList(tmp));
+                //    }
+                //    list.Add(regular);
+                //    break;
+                //}
 
-                if (index < 0)
-                {
-                    var tmp1 = ConvertStringToStringList(str.Substring(0), "|", grammatic);
-                    foreach (var tmp in tmp1)
-                    {
-                        regular.right.Add(ConvertStringToStringList(tmp, grammatic));
-                    }
-                    list.Add(regular);
-                    break;
-                }
+                var tmp2 = ConvertStringToStringList(str.Substring(0, index), "|");
+                //mDebug = "";
+                //foreach (var iter in tmp2) {
+                //    mDebug += iter;
+                //}
 
-                var tmp2 = ConvertStringToStringList(str.Substring(0, index), "|", grammatic);
                 foreach (var tmp in tmp2)
                 {
-                    regular.right.Add(ConvertStringToStringList(tmp, grammatic));
+
+                    regular.right.Add(ConvertStringToStringList(tmp));
                 }
 
 
-                str = str.Substring(index + 1);
+                //str = str.Substring(index + 1);
                 list.Add(regular);
             }
 
             return list;
         }
 
-        protected static List<string> ConvertStringToStringList(string str, Grammatic grammatic)
+        protected List<string> ConvertStringToStringList(string str)
         {
             List<string> list = new List<string>();
-            // str = aaT | lamd
-            int i = 0;
-            int start = 0;
+            //// str = aaT
+            //int i = 0;
+            //int start = 0;
 
-            if (grammatic.lamb.Equals(str))
-            {
-                list.Add(grammatic.lamb);
-                return list;
+            mDebug = "";
+            //foreach (var iter in mGrammatic.VT) {
+            //    mDebug += iter;
+            //}
+            int move = 0;
+            for (int i = 0; i < str.Length; i++) {
+                foreach (var gramVt in mGrammatic.VT) {
+                    if (gramVt.Equals(str[i].ToString())) {
+                        move++;
+                    }
+                }
             }
+            if (move > 0) {
+                list.Add(str.Substring(0, move));
+            }
+            str = str.Substring(move);
 
-            while (i < str.Length && grammatic.VT.FindIndex(t => t == str.Substring(i, 1)) > -1)
-            {
-                i++;
-            }
-            if (i > 0)
-            {
-                list.Add(str.Substring(start, i));
-            }
-            start = i;
-            int j = 0;
-            while (i < str.Length && grammatic.VN.FindIndex(t => t == str.Substring(i, 1)) > -1)
-            {
-                list.Add(str.Substring(start, 1));
-                i++;
-                start = i;
-            }
-            if (i > start)
-            {
-                list.Add(str.Substring(start, j));
-            }
-
-            start = i;
-            j = 0;
-            while (i < str.Length && grammatic.VT.FindIndex(t => t == str.Substring(i, 1)) > -1)
-            {
-                i++;
-                j++;
+            move = 0;
+            for (int i = 0; i < str.Length; i++) {
+                foreach (var gramVt in mGrammatic.VN) {
+                    if (gramVt.Equals(str[i].ToString())) {
+                        move++;
+                    }
+                }
             }
 
-            if (i > start)
-            {
-                list.Add(str.Substring(start, j));
+            if (move > 0) {
+                list.Add(str.Substring(0, 1));
             }
 
-            // list = aa, T
+            //while (i < str.Length && mGrammatic.VT.FindIndex(t => t == str.Substring(i, 1)) > -1) {
+            //    i++;
+            //}
+            //if (i > 0) {
+            //    list.Add(str.Substring(start, i));
+            //}
+            //start = i;
+            //int j = 0;
+            //while (i < str.Length && mGrammatic.VN.FindIndex(t => t == str.Substring(i, 1)) > -1) {
+            //    list.Add(str.Substring(start, 1));
+            //    i++;
+            //    start = i;
+            //}
+
+            //list = aa, T
             return list;
         }
 
-        protected static List<string> ConvertStringToStringList(string str, string border, Grammatic grammatic)
+        protected static List<string> ConvertStringToStringList(string str, string border)
         {
             List<string> list = new List<string>();
             while (str.Length > 0)
