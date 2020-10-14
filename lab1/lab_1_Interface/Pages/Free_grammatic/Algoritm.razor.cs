@@ -51,7 +51,7 @@ namespace lab_1_Interface.Pages.Free_grammatic
         {
             if (!string.IsNullOrWhiteSpace(mNewRegularLeft) && !(string.IsNullOrWhiteSpace(mNewRegularRight)))
             {
-                string str = mNewRegularLeft + "->" + mNewRegularRight + "\r\n";
+                string str = mNewRegularLeft + "->" + mNewRegularRight + "\n";
                 var reg = ConvertStringToRegular(str);
                 if (reg == null)
                 {
@@ -208,7 +208,15 @@ namespace lab_1_Interface.Pages.Free_grammatic
             Regular s = mGrammatic.Regulation.Find(x => x.left == S);
             
             foreach (var rightRegular in s.right) {
-                
+                foreach (var element in rightRegular) {
+                    if (element.Equals(mGrammatic.lamb)) {
+                        // 
+                    } else if (mGrammatic.VN.FindIndex(x => x == element) > -1) {
+                        // 
+                    } else if (mGrammatic.VT.FindIndex(x => x == element) > -1) {
+                        //
+                    }
+                }
             }
 
             return list;
@@ -328,7 +336,7 @@ namespace lab_1_Interface.Pages.Free_grammatic
             int i = 0;
             int start = 0;
 
-            if (str == mGrammatic.lamb) {
+            if (str.Replace("\n", "").Replace("\t", "").Replace("\r", "") == mGrammatic.lamb.Replace("\n", "").Replace("\t", "").Replace("r", "")) {
                 list.Add(mGrammatic.lamb);
                 return list;
             }
