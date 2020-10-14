@@ -157,7 +157,6 @@ D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\lab_1_Interface
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\lab_1_Interface.RazorComponent.input.cache
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Free_grammatic\Algoritm.razor.g.cs
-D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Free_grammatic\Setting.razor.g.cs
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
@@ -179,3 +178,14 @@ D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\staticwebassets
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\lab_1_Interface.dll
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\lab_1_Interface.pdb
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\lab_1_Interface.genruntimeconfig.cache
+D:\study\ТЯП\tlp\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\BlazorInputFile.dll
+D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\lab_1_Interface.csproj.CoreCompileInputs.cache
+D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\lab_1_Interface.MvcApplicationPartsAssemblyInfo.cache
+D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\lab_1_Interface.dll
+D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Pages\Free_grammatic\Algoritm.razor.g.cs
+D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
+D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
