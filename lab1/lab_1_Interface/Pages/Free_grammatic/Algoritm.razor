@@ -23,19 +23,20 @@
 
 <div>
     <label class="pr-2" style="width: 110px">Терминалы</label>
-    <input type="text" id="input_vt" placeholder="Введите символы через запятую" style="width: 270px" @bind=input_vt_text />
+    <input type="text" id="input_vt" placeholder="Введите символы через запятую" style="width: 270px" @bind=mInputVtText />
     <button @onclick="inputVT" class="btn btn-primary">Записать</button>
 </div>
 <br>
 <div>
     <label class="pr-2" style="width: 110px">Нетерминалы</label>
-    <input type="text" id="input_vn" placeholder="Введите символы через запятую" style="width: 270px" @bind=input_vn_text />
+    <input type="text" id="input_vn" placeholder="Введите символы через запятую" style="width: 270px" @bind=mInputVnText />
     <button @onclick="inputVN" class="btn btn-primary">Записать</button>
 </div>
 
 <label>Терминальный список</label>
 <ul>
-    @foreach (string list in grammatic.VT) {
+    @foreach (string list in mGrammatic.VT)
+    {
         <li>
             @list
         </li>
@@ -44,216 +45,80 @@
 
 <label>Нетерминальный список</label>
 <ul>
-    @foreach (string list in grammatic.VN) {
+    @foreach (string list in mGrammatic.VN)
+    {
         <li>
             @list
         </li>
     }
 </ul>
 
-<br><h4>Всего правил: (@grammatic.Regulation.Count)</h4>
+<div>
+    <label class="pr-2">Количество символов:</label>
+    <label class="" style="width: 50px">От:</label>
+    <input type="text" @bind="@mGrammatic.Min" />
+    <label class="" style="width: 50px">До:</label>
+    <input type="text" @bind="@mGrammatic.Max" />
+</div>
+
+<br>
+<h4>Всего правил: (@mGrammatic.Regulation?.Count)</h4>
+<label>(Зарезервированные символы: @mGrammatic.lamb - лямбда)</label>
 
 <ul>
-    @foreach (var regular in grammatic.Regulation) {
-    <li>
-        <form style="float: left; ">
-            <input list="swap" @bind-value="regular.left" style="width: 50px;" placeholder="Выберите элемент">
-            <datalist id="swap">
-                @foreach (string list in grammatic.VN) {
-                    <option>
-                        @list
-                    </option>
-                }
-            </datalist>
-        </form>
+    @foreach (var regular in mGrammatic.Regulation)
+    {
+        <div class="row">
+            <div>
+                @regular.left
+            </div>
 
-        <span style="margin-left: 10px; ">
-            <span> -> </span> 
-            @foreach (var regularRight in regular.right) {
-                @foreach (var element in regularRight) {
-                    <span>@element</span>
+            <span style="margin-left: 10px; ">
+                <span> -> </span>
+                @foreach (var regularRight in regular.right)
+                {
+                    @foreach (var element in regularRight)
+                    {
+                        <span>@element</span>
+                    }
+                    <span> | </span>
                 }
-                <span> | </span>
-            }
-        </span>
-    </li>
+            </span>
+        </div>
     }
 </ul>
 
 <div>
     <form>
-        <input list="regular" @bind-value=newRegularLeft style="width: 185px;  margin-top: 10px; float: left; " placeholder="Выберите элемент">
+        <input list="regular" @bind-value=mNewRegularLeft style="width: 185px;  margin-top: 10px; float: left; " placeholder="Выберите элемент">
         <datalist id="regular">
-            @foreach (string list in grammatic.VN) {
+            @foreach (string list in mGrammatic.VN)
+            {
                 <option>
                     @list
                 </option>
             }
         </datalist>
     </form>
-    <input type="text" @bind-value="newRegularRight" placeholder="Введите правило" style="width: 185px;  margin-top: 10px; margin-left: 10px; "/>
+    <input type="text" @bind-value="mNewRegularRight" placeholder="Введите правило" style="width: 185px;  margin-top: 10px; margin-left: 10px; " />
     <button class="btn btn-primary" @onclick="onClickNewRegular">Записать</button>
 </div>
 
 <div>
-    <span>@debug</span>
+    <label class="pr-2">Начальный символ:</label>
+    <input type="text" @bind="@mGrammatic.S" />
 </div>
 
-@code {
-    Grammatic grammatic = new Grammatic();
+<div>
+    <span>@mDebug</span>
+</div>
 
-    string input_vt_text, input_vn_text;
-    string[] split_vt_text, split_vn_text;
+<button @onclick="CompRec" class="btn btn-primary">Вычислить</button>
 
-    string newRegularLeft, newRegularRight;
-
-    static string debug;
-
-    protected override void OnInitialized()
+@if (Answer != null)
+{
+    @foreach (var m in Answer)
     {
-        grammatic.VT = new List<string>();
-        grammatic.VN = new List<string>();
-        grammatic.Regulation = new List<Regular>();
-        grammatic.lamb = new string("lamb");
+        <div>@m</div>
     }
-
-    void onClickNewRegular()
-    {
-        if (!string.IsNullOrWhiteSpace(newRegularLeft) && !(string.IsNullOrWhiteSpace(newRegularRight))) {
-
-            grammatic.Regulation = ConvertStringToRegular(newRegularLeft + "->" + newRegularRight + "\r\n", grammatic);
-
-        }
-    }
-
-
-    public static List<Regular> ConvertStringToRegular(string str, Grammatic grammatic)
-    {
-        List<Regular> list = new List<Regular>();
-        while (str.Length > 1) {
-            Regular regular = new Regular();
-            regular.right = new List<List<string>>();
-            var index = str.IndexOf("-");
-            regular.left = str.Substring(0, index);
-
-            str = str.Substring(index + 2);
-            debug = ""; // DEBUG
-
-            foreach (char iterator in str) {
-                debug += (int)iterator;
-            }
-
-            index = str.IndexOf("\n");
-
-            if (index < 0) {
-                var tmp1 = ConvertStringToStringList(str.Substring(0), "|", grammatic);
-                foreach (var tmp in tmp1) {
-                    regular.right.Add(ConvertStringToStringList(tmp, grammatic));
-                }
-                list.Add(regular);
-                break;
-            }
-
-            var tmp2 = ConvertStringToStringList(str.Substring(0, index), "|", grammatic);
-            foreach (var tmp in tmp2) {
-                regular.right.Add(ConvertStringToStringList(tmp, grammatic));
-            }
-
-
-            str = str.Substring(index + 1);
-            list.Add(regular);
-        }
-
-        return list;
-    }
-
-    public static List<string> ConvertStringToStringList(string str, Grammatic grammatic)
-    {
-        List<string> list = new List<string>();
-        // str = aaT | lamd
-        int i = 0;
-        int start = 0;
-
-        if (grammatic.lamb.Equals(str)) {
-            list.Add(grammatic.lamb);
-            return list;
-        }
-
-        while (i < str.Length && grammatic.VT.FindIndex(t => t == str.Substring(i, 1)) > -1) {
-            i++;
-        }
-        if (i > 0) {
-            list.Add(str.Substring(start, i));
-        }
-        start = i;
-        int j = 0;
-        while (i < str.Length && grammatic.VN.FindIndex(t => t == str.Substring(i, 1)) > -1) {
-            list.Add(str.Substring(start, 1));
-            i++;
-            start = i;
-        }
-        if (i > start) {
-            list.Add(str.Substring(start, j));
-        }
-
-        start = i;
-        j = 0;
-        while (i < str.Length && grammatic.VT.FindIndex(t => t == str.Substring(i, 1)) > -1) {
-            i++;
-            j++;
-        }
-
-        if (i > start) {
-            list.Add(str.Substring(start, j));
-        }
-
-        // list = aa, T
-        return list;
-    }
-
-    private static List<string> ConvertStringToStringList(string str, string border, Grammatic grammatic)
-    {
-        List<string> list = new List<string>();
-        while (str.Length > 0) {
-            var index = str.IndexOf(border);
-            if (index == -1) {
-                break;
-            }
-            list.Add(str.Substring(0, index));
-            str = str.Substring(index + 1);
-        }
-
-        var index1 = str.IndexOf("\n");
-        if (index1 < 0) {
-            list.Add(str.Substring(0));
-        } else {
-            list.Add(str.Substring(0, index1));
-        }
-        return list;
-    }
-
-    void inputVT()
-    {
-        if (!string.IsNullOrWhiteSpace(input_vt_text)) {
-            split_vt_text = input_vt_text.Split(",");
-            grammatic.VT = new List<string>();
-            foreach (string list in split_vt_text) {
-                grammatic.VT.Add(list);
-            }
-        }
-    }
-
-    void inputVN()
-    {
-        if (!string.IsNullOrWhiteSpace(input_vn_text)) {
-            split_vn_text = input_vn_text.Split(",");
-            grammatic.VN = new List<string>();
-            foreach (string list in split_vn_text) {
-                grammatic.VN.Add(list);
-            }
-        }
-    }
-
-
-
 }
