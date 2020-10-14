@@ -111,6 +111,14 @@
             "MatBlazor": {
               "target": "Package",
               "version": "[2.7.0, )"
+            },
+            "Microsoft.AspNetCore.NodeServices": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.VisualStudio.Services.Client": {
+              "target": "Package",
+              "version": "[16.153.0, )"
             }
           },
           "imports": [

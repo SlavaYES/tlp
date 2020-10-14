@@ -6,7 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using BlazorInputFile;
 using lab_1_Interface.Models;
+using MatBlazor;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.TeamFoundation.Common.Internal;
 
 namespace lab_1_Interface.Pages.Free_grammatic
 {
@@ -205,19 +207,7 @@ namespace lab_1_Interface.Pages.Free_grammatic
         {
             List<string> list = new List<string>();
 
-            Regular s = mGrammatic.Regulation.Find(x => x.left == S);
-            
-            foreach (var rightRegular in s.right) {
-                foreach (var element in rightRegular) {
-                    if (element.Equals(mGrammatic.lamb)) {
-                        // 
-                    } else if (mGrammatic.VN.FindIndex(x => x == element) > -1) {
-                        // 
-                    } else if (mGrammatic.VT.FindIndex(x => x == element) > -1) {
-                        //
-                    }
-                }
-            }
+            Dictionary<string, List<string>> keyValues = new Dictionary<string, List<string>>();
 
             return list;
         }
