@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
+using BlazorInputFile;
 using lab_1_Interface.Models;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
@@ -19,6 +22,11 @@ namespace lab_1_Interface.Pages.Free_grammatic
         static string mDebug;
         protected List<string> Answer { get; set; }
 
+        protected List<string> FileErrorsList { get; set; }
+        protected bool showProgressBar { get; set; } = false;
+        protected double progressValue { get; set; }
+        protected DocumentModel Document { get; set; }
+
         protected override void OnInitialized()
         {
             mGrammatic.VT = new List<string>();
@@ -30,7 +38,7 @@ namespace lab_1_Interface.Pages.Free_grammatic
         protected void onClickNewRegular()
         {
             if (!string.IsNullOrWhiteSpace(mNewRegularLeft) && !(string.IsNullOrWhiteSpace(mNewRegularRight)))
-            { 
+            {
                 var reg = ConvertStringToRegular(mNewRegularLeft + "->" + mNewRegularRight + "\r\n");
                 if (reg == null)
                 {
@@ -57,7 +65,7 @@ namespace lab_1_Interface.Pages.Free_grammatic
 
                 str = str.Substring(index + 2);
                 index = str.IndexOf("\n");
-                
+
                 //if (index < 0)
                 //{
                 //    var tmp1 = ConvertStringToStringList(str.Substring(0), "|");
@@ -101,28 +109,36 @@ namespace lab_1_Interface.Pages.Free_grammatic
             //    mDebug += iter;
             //}
             int move = 0;
-            for (int i = 0; i < str.Length; i++) {
-                foreach (var gramVt in mGrammatic.VT) {
-                    if (gramVt.Equals(str[i].ToString())) {
+            for (int i = 0; i < str.Length; i++)
+            {
+                foreach (var gramVt in mGrammatic.VT)
+                {
+                    if (gramVt.Equals(str[i].ToString()))
+                    {
                         move++;
                     }
                 }
             }
-            if (move > 0) {
+            if (move > 0)
+            {
                 list.Add(str.Substring(0, move));
             }
             str = str.Substring(move);
 
             move = 0;
-            for (int i = 0; i < str.Length; i++) {
-                foreach (var gramVt in mGrammatic.VN) {
-                    if (gramVt.Equals(str[i].ToString())) {
+            for (int i = 0; i < str.Length; i++)
+            {
+                foreach (var gramVt in mGrammatic.VN)
+                {
+                    if (gramVt.Equals(str[i].ToString()))
+                    {
                         move++;
                     }
                 }
             }
 
-            if (move > 0) {
+            if (move > 0)
+            {
                 list.Add(str.Substring(0, 1));
             }
 
@@ -202,6 +218,61 @@ namespace lab_1_Interface.Pages.Free_grammatic
         }
         List<string> CompRec(string S, int stringCount)
         {
+            return null;
+        }
+
+        protected async void HandleFileSelected(IFileListEntry[] files)
+        {
+            FileErrorsList = new List<string>();
+            progressValue = 0.0;
+            showProgressBar = true;
+
+            if (files != null && files.Count() > 0)
+            {
+                double step = (double)1 / files.Count();
+                foreach (var file in files)
+                {
+                    try
+                    {
+                        var doc = await UploadFile(file);
+                        if (doc != null)
+                        {
+                            Document = doc;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        FileErrorsList.Add($"File: {file.Name} don't uploaded, because {e.Message}");
+                    }
+                    finally
+                    {
+                        progressValue += step;
+                        StateHasChanged();
+                    }
+                }
+            }
+            progressValue = 1.0;
+            showProgressBar = false;
+            StateHasChanged();
+        }
+
+        public async Task<DocumentModel> UploadFile(IFileListEntry file)
+        {
+            if (file != null)
+            {
+                byte[] result;
+                MemoryStream SourceStream = await file.ReadAllAsync((int)file.Size);
+                result = new byte[file.Data.Length];
+                await SourceStream.ReadAsync(result, 0, (int)file.Data.Length);
+
+                DocumentModel doc = new DocumentModel()
+                {
+                    FileName = file.Name,
+                    Data = result,
+                    ContentType = file.Type
+                };
+                return doc;
+            }
             return null;
         }
     }
