@@ -86,6 +86,19 @@
 
 <div>
     <form>
+        <input list="regularS" @bind-value=@mGrammatic.S style="width: 185px;  margin-top: 10px;" placeholder="Начальный">
+        <datalist id="regularS">
+            @foreach (string list in mGrammatic.VN) {
+                <option>
+                    @list
+                </option>
+            }
+        </datalist>
+    </form>
+</div>
+
+<div>
+    <form>
         <input list="regular" @bind-value=mNewRegularLeft style="width: 185px;  margin-top: 10px; float: left; " placeholder="Выберите элемент">
         <datalist id="regular">
             @foreach (string list in mGrammatic.VN)
@@ -100,16 +113,11 @@
     <button class="btn btn-primary" @onclick="onClickNewRegular">Записать</button>
 </div>
 
-<div>
-    <label class="pr-2">Начальный символ:</label>
-    <input type="text" @bind="@mGrammatic.S" />
-</div>
-
-<div>
-    <span>@mDebug</span>
-</div>
-
 <button @onclick="CompRec" class="btn btn-primary">Вычислить</button>
+
+<div>
+    @mDebug
+</div>
 
 @if (Answer != null)
 {

@@ -95,7 +95,6 @@ C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков прогр�
 C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\lab_1_Interface.RazorComponent.input.cache
 C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
 C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Free_grammatic\Algoritm.razor.g.cs
-C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Free_grammatic\Setting.razor.g.cs
 C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
 C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
@@ -107,7 +106,6 @@ C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков прогр�
 C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\lab_1_Interface.RazorCoreGenerate.cache
 C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
 C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Pages\Free_grammatic\Algoritm.razor.g.cs
-C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Pages\Free_grammatic\Setting.razor.g.cs
 C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
 C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
 C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
@@ -189,3 +187,8 @@ D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Shared\Ma
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\BlazorInputFile.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\file.txt
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\lab1.exe
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\lab1.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\lab1.pdb

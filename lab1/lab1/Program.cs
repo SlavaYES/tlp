@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace lab1
 {
-    class Program
+    public class Program
     {
         private static List<String> mTerminalList;
         private static List<String> mNotTerminalList;
@@ -198,7 +198,7 @@ namespace lab1
             Console.WriteLine("Введите терминальные символы!");
         }
 
-        private static List<Regulations> ConvertStringToRegulations(string str)
+        public static List<Regulations> ConvertStringToRegulations(string str)
         {
             List<Regulations> list = new List<Regulations>();
             while (str.Length > 1) {
@@ -228,7 +228,7 @@ namespace lab1
 
             return list;
         }
-        private static List<string> ConvertStringToStringList(string str)
+        public static List<string> ConvertStringToStringList(string str)
         {
             List<string> list = new List<string>();
             // str = aaT | lamd
@@ -273,7 +273,7 @@ namespace lab1
             return list;
         }
 
-        private static List<string> ConvertStringToStringList(string str, string border)
+        public static List<string> ConvertStringToStringList(string str, string border)
         {
             List<string> list = new List<string>();
             while (str.Length > 0) {

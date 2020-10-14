@@ -4,6 +4,61 @@
     "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj": {}
   },
   "projects": {
+    "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj",
+        "projectName": "lab1",
+        "projectPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj",
+        "packagesPath": "C:\\Users\\voen1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\voen1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab_1_Interface\\lab_1_Interface.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -29,7 +84,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj": {
+                "projectPath": "C:\\Users\\voen1\\Documents\\Course_4\\[ТЯП] Теория языков программирования\\lab1\\lab1\\lab1\\lab1.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

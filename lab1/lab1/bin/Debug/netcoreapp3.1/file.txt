@@ -1,6 +1,7 @@
-a, b, c, k
-A, B, C
+a,b,c,k
+A,B,C
 A
-1, 10
-A -> B
-B -> a | b
+1,10
+A -> aB|cC
+B -> aC|bC
+C -> k|c
