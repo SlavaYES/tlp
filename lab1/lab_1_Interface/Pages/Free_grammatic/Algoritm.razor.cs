@@ -33,13 +33,23 @@ namespace lab_1_Interface.Pages.Free_grammatic
             mGrammatic.VN = new List<string>();
             mGrammatic.Regulation = new List<Regular>();
             mGrammatic.lamb = new string("lamb");
+
+            // 
+            mGrammatic.VT.Add("1");
+            mGrammatic.VT.Add("2");
+
+
+            mGrammatic.VN.Add("a");
+            mGrammatic.VN.Add("b");
+            mNewRegularRight = "1a|2b";
+            mNewRegularLeft = "a";
         }
 
         protected void onClickNewRegular()
         {
             if (!string.IsNullOrWhiteSpace(mNewRegularLeft) && !(string.IsNullOrWhiteSpace(mNewRegularRight)))
             {
-                var reg = ConvertStringToRegular(mNewRegularLeft + "->" + mNewRegularRight + "\r\n");
+                string str = mNewRegularLeft + "->" + mNewRegularRight + "\r\n";
                 if (reg == null)
                 {
                     return;
@@ -65,32 +75,21 @@ namespace lab_1_Interface.Pages.Free_grammatic
 
                 str = str.Substring(index + 2);
                 index = str.IndexOf("\n");
-
-                //if (index < 0)
-                //{
-                //    var tmp1 = ConvertStringToStringList(str.Substring(0), "|");
-                //    foreach (var tmp in tmp1)
-                //    {
-                //        regular.right.Add(ConvertStringToStringList(tmp));
-                //    }
-                //    list.Add(regular);
-                //    break;
-                //}
+                if (index < 0) {
+                    var tmp1 = ConvertStringToStringList(str.Substring(0), "|");
+                    foreach (var tmp in tmp1) {
+                        regular.right.Add(ConvertStringToStringList(tmp));
+                    }
+                    list.Add(regular);
+                    break;
+                }
 
                 var tmp2 = ConvertStringToStringList(str.Substring(0, index), "|");
-                //mDebug = "";
-                //foreach (var iter in tmp2) {
-                //    mDebug += iter;
-                //}
-
-                foreach (var tmp in tmp2)
-                {
+                foreach (var tmp in tmp2) {
 
                     regular.right.Add(ConvertStringToStringList(tmp));
                 }
-
-
-                //str = str.Substring(index + 1);
+                str = str.Substring(index + 1);
                 list.Add(regular);
             }
 
