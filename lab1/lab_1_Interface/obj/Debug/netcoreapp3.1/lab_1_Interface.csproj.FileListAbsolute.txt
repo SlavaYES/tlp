@@ -219,3 +219,30 @@ D:\study\ТЯП\tlp\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\runtimes\win\li
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\lab1.dll
 D:\study\ТЯП\tlp\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\lab1.pdb
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\Microsoft.TeamFoundation.Common.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Services.Common.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Services.WebApi.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard2.0\System.Data.SqlClient.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Data.SqlClient.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\lab_1_Interface.csproj.CoreCompileInputs.cache
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\lab_1_Interface.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\lab_1_Interface.dll
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Pages\Free_grammatic\Algoritm.razor.g.cs
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Determ_auto\DeterministicAutomation.razor.g.cs
+C:\Users\voen1\Documents\Course_4\[ТЯП] Теория языков программирования\lab1\lab1\lab_1_Interface\obj\Debug\netcoreapp3.1\Razor\Pages\Determ_auto\DeterministicAutomation.razor.g.cs
