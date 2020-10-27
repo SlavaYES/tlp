@@ -113,7 +113,7 @@
     <button class="btn btn-primary" @onclick="onClickNewRegular">Записать</button>
 </div>
 
-<button @onclick="CompRecSasha" class="btn btn-primary">Вычислить</button>
+<button @onclick="CompRec" class="btn btn-primary">Вычислить</button>
 
 <div>
     @mDebug
@@ -124,15 +124,5 @@
     @foreach (var m in Answer)
     {
         <div>@m</div>
-    }
-}
-
-<label>Ответ:</label>
-
-@if (listAnswer != null)
-{
-    @foreach (var model in listAnswer)
-    {
-        <div>@model.Str</div>
     }
 }
