@@ -1,0 +1,88 @@
+﻿@page "/lab2"
+@inherits CheckGrammaticViewModel
+@using BlazorInputFile
+<style>
+    .name_r, .input_vn_r {
+        width: 40px;
+        text-align: center;
+    }
+
+    .reg {
+        width: 100px;
+        text-align: center;
+    }
+</style>
+
+<InputFile OnChange="HandleFileSelected"></InputFile>
+<div>
+    <label class="pr-2" style="width: 110px">Терминалы</label>
+    <input type="text" id="input_vt" placeholder="Введите символы через запятую" style="width: 270px" @bind=mInputVtText />
+    <button @onclick="inputVT" class="btn btn-primary">Записать</button>
+</div>
+<br>
+<div>
+    <label class="pr-2" style="width: 110px">Нетерминалы</label>
+    <input type="text" id="input_vn" placeholder="Введите символы через запятую" style="width: 270px" @bind=mInputVnText />
+    <button @onclick="inputVN" class="btn btn-primary">Записать</button>
+</div>
+
+<label>Терминальный список</label>
+<ul>
+    @foreach (string list in mGrammatic.VT)
+    {
+        <li>
+            @list
+        </li>
+    }
+</ul>
+
+<label>Нетерминальный список</label>
+<ul>
+    @foreach (string list in mGrammatic.VN)
+    {
+        <li>
+            @list
+        </li>
+    }
+</ul>
+
+@*<div>
+        <label class="pr-2">Количество символов:</label>
+        <label class="" style="width: 50px">От:</label>
+        <input type="text" @bind="@mGrammatic.Min" />
+        <label class="" style="width: 50px">До:</label>
+        <input type="text" @bind="@mGrammatic.Max" />
+    </div>*@
+
+<button @onclick="@ShowTable" class="btn btn-primary">Показать таблицу</button>
+
+@if (mIsShowTable)
+{
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th></th>
+                @foreach (var term in mGrammatic.VT)
+                {
+                    <th style="text-align: center">@term</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @for (var index = 0; index < mTable.Rows.Count; index++)
+            {
+                var row = mTable.Rows[index];
+                <tr>
+                    <td>@row.NotTerm</td>
+                    @for (var index1 = 0; index1 < row.Reg.Count; index1++)
+                    {
+                        var reg = row.Reg[index1];
+                        <td style="text-align: center">
+                            <input type="text" id="input_vt" style="width: 50px" @bind="reg.Term" />
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
